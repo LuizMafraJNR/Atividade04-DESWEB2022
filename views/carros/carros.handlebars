@@ -1,0 +1,58 @@
+<h3>Carros</h3>
+
+<a href="/carros/novo" class="btn btn-primary">Novo</a>
+
+<table class="table" id="carros">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Data Fabricação</th>
+            <th>Cor do veiculo</th>
+            <th>Consumo Cidade</th>
+            <th>Consumo rodovia</th>
+            <th>Nº Chassi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each listaclientes}}
+        <tr> <!-- Table ROW --> 
+            <td>{{this.id}}</td> <!-- Table DATA --> 
+            <td>{{this.marca}}</td>
+            <td>{{this.modelo}}</td>
+            <td>{{this.datafab}}</td>
+            <td>{{this.cordocarro}}</td>
+            <td>{{this.consumoMedioCidade}}</td>
+            <td>{{this.consumoMedioRodovia}}</td>
+            <td>{{this.numerochasssi}}</td>
+            <td>
+                <a href="/carros/alterar/{{this.id}}" class="btn btn-primary">Alterar</a>
+                <button class="btn btn-danger js-delete" data-id="{{this.id}}">Excluir</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<!-- tela de confirmação -->
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir dados do carro</h5>
+      </div>
+      <div class="modal-body">
+        <p>Voce realmente quer apagar esse carro?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnsim">Confirmar</button>
+        <button type="button" class="btn btn-secondary" id="btncancelar" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/public/site.js"></script>
+

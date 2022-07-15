@@ -1,0 +1,41 @@
+<form action="/carros/save" method="POST">
+
+    <input type="hidden" value="{{carros.id}}" name="id">
+
+
+    <div class="form-group">
+        <label for="txtsexo">Marca:</label>
+        <input class="form-control" value="{{carros.marca}}" type="text" id="txtmarca" name="marca">
+    </div>
+    <div class="form-group">
+        <label for="txtsexo">Modelo:</label>
+        <input class="form-control" value="{{carros.modelo}}" type="text" id="txtmodelo" name="modelo">
+    </div>
+    <div class="form-group col-md-2">
+        <label for="txtsexo">Data de fabricação:</label>
+        <input class="form-control" value="{{carros.datafab}}" type="date" id="txtdatafab" name="datafab">
+    </div>
+    <div class="form-group col-md-1">
+        <label for="inputState">Selecionar cor</label>
+        <select id="cordocarro" name="cordocarro" class="form-control">
+            <option selected><strong> Escolha...</strong></option>
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Cinza">Cinza</option>
+        </select>
+    </div>
+    <div class="form-group col-md-2">
+        <label for="txtsexo">Consumo medio na cidade:</label>
+        <input class="form-control" value="{{carros.consumoMedioCidade}}" type="text" id="txtconsumoMedioCidade" name="consumoMedioCidade">
+    </div>
+    <div class="form-group col-md-2">
+        <label for="txtsexo">Consumo medio na estrada:</label>
+        <input class="form-control" value="{{carros.consumoMedioRodovia}}" type="text" id="txtconsumoMedioRodovia" name="consumoMedioRodovia">
+    </div>
+    <div class="form-group col-md-3 mb-3">
+        <label for="txtsexo">Número do chassi:</label>
+        <input class="form-control" maxlength="10" value="{{carros.numerochasssi}}" type="text" id="txtnumerochasssi" name="numerochasssi">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
